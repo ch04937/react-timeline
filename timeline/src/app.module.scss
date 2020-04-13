@@ -1,0 +1,14 @@
+@mixin flex($content, $direction) {
+	display: flex;
+	justify-content: $content;
+	flex-direction: $direction;
+}
+
+.app {
+	@include flex(center, column);
+	text-align: center;
+	position: relative;
+	margin: 4rem 0;
+	&::after {
+	}
+}
