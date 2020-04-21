@@ -47,20 +47,21 @@ function App() {
 	];
 
 	return (
-		<div className={styles.app}>
+		<div>
 			<h1>React Timeline</h1>
 
-			<div className={styles.cards}>
-				<div className={styles.content}>
-					{timeLineArray.map((data, idx) => (
-						<div key={idx}>
+			<div className={styles.container}>
+				{timeLineArray.map((data, idx) => (
+					<div className={styles.item} key={idx}>
+						<div className={styles.pointer}>&#9655;</div>
+						<div className={styles.content}>
 							<span
 								className={styles.tag}
 								style={{ background: data.category.color }}
 							>
 								{data.category.tag}
 							</span>
-							<time>{data.date}</time>
+							<p style={{ color: "#777" }}>{data.date}</p>
 							<p>{data.text}</p>
 							{data.link && (
 								<a
@@ -71,10 +72,9 @@ function App() {
 									{data.link.text}
 								</a>
 							)}
-							<span className={styles.circle} />)
 						</div>
-					))}
-				</div>
+					</div>
+				))}
 			</div>
 		</div>
 	);
